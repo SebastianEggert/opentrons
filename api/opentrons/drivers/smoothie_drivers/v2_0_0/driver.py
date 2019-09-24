@@ -166,7 +166,7 @@ class SmoothieDriver_2_0_0(SmoothieDriver):
     def ignore_next_line(self):
         self.connection.readline_string()
 
-    def readline_from_serial(self, timeout=3):
+    def readline_from_serial(self, timeout=25):
         """
         Attempt to read a line of data from serial port
 
@@ -244,7 +244,7 @@ class SmoothieDriver_2_0_0(SmoothieDriver):
             self,
             command,
             read_after=True,
-            timeout=3,
+            timeout=25,
             m400=False,
             **kwargs):
         """
@@ -674,33 +674,6 @@ class SmoothieDriver_2_0_0(SmoothieDriver):
         self.wait_for_ok()  # ignore second 'ok'
         self.read_config_file()
 
-    def versions_compatible(self):
-        self.get_ot_version()
-        self.get_firmware_version()
-        self.get_config_version()
-        res = {
-            'firmware': True,
-            'config': True,
-            'ot_version': True
-        }
-        if self.firmware_version not in self.compatible_firmware:
-            res['firmware'] = False
-        if self.config_file_version not in self.compatible_config:
-            res['config'] = False
-        if self.ot_version not in self.ot_one_dimensions:
-            res['ot_version'] = False
-
-        if not all(res.values()):
-            raise RuntimeError(
-                'This Robot\'s versions are incompatible with the API: '
-                'firmware={firmware}, '
-                'config={config}, '
-                'ot_version={ot_version}'.format(
-                    firmware=self.firmware_version,
-                    config=self.config_file_version,
-                    ot_version=self.ot_version
-                )
-            )
         return res
 
     def get_ot_version(self):
