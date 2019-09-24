@@ -1,3 +1,5 @@
+## Sebastian
+
 # Opentrons Platform
 
 * [Overview](#overview)
@@ -8,11 +10,11 @@
 <a name="overview"></a>
 ## Overview
 
-Opentrons makes robots for biologists. 
+Opentrons makes robots for biologists.
 
 Our mission is to provide the scientific community with a common platform to easily share protocols and reproduce each other's work. Our robots automate experiments that would otherwise be done by hand, allowing our users to spend more time pursuing answers to the 21st century’s most important questions, and less time pipetting.
 
-This repository contains the source code for the Opentrons API and OT App. We'd love for you to to explore, hack, and build upon them! 
+This repository contains the source code for the Opentrons API and OT App. We'd love for you to to explore, hack, and build upon them!
 
 <a name="api"></a>
 ## Opentrons API
@@ -45,7 +47,7 @@ Easily upload a protocol, calibrate positions, and run your experiment from your
 
 We love contributors! Here is the best way to work with us:
 
-1. Filing a [bug report](https://github.com/OpenTrons/opentrons/issues). We will fix these as quickly as we can, and appreciate your help uncovering bugs in our code. 
+1. Filing a [bug report](https://github.com/OpenTrons/opentrons/issues). We will fix these as quickly as we can, and appreciate your help uncovering bugs in our code.
 
 2. Submit a pull request with any new features you've added to a branch of the API or App. We will reach out to talk with you about integration testing and launcing it into our product!
 
