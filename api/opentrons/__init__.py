@@ -2,6 +2,7 @@ import csv  # Needed for customers
 import sys
 
 from opentrons.robot.robot import Robot
+from opentrons.robot.robot2 import Robot2
 from opentrons import instruments as inst, containers as cnt
 
 from ._version import get_versions
@@ -15,12 +16,18 @@ if version < (3, 5):
 
 
 robot = Robot()
+robot2 = Robot2()
 
 
 def reset():
     global robot
     robot = Robot()
     return robot
+
+def reset2():
+    global robot2
+    robot2 = Robot2()
+    return robot2
 
 
 class ContainersWrapper(object):
@@ -51,7 +58,7 @@ class InstrumentsWrapper(object):
 instruments = InstrumentsWrapper(robot)
 containers = ContainersWrapper(robot)
 
-__all__ = [containers, csv, instruments, robot, reset]
+__all__ = [containers, csv, instruments, robot, robot2, reset, reset2]
 
 
 __version__ = get_versions()['version']
